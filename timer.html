@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Timer Demo</title>
+</head>
+<body>
+<div id="container">
+<h1>Timer</h1>
+
+<span id="timer">20</span>
+
+</div>
+
+
+<script type="text/javascript">
+	var timerInterval = setInterval(processTimer, 1000);
+
+
+	function processTimer() {
+		var sec = parseInt(document.getElementById('timer').innerHTML);
+		sec--;
+		//console.log(sec);
+		if(sec < 0) {
+			console.log('here');
+			document.getElementById('timer').innerHTML = 'finished timer';
+			clearInterval(timerInterval);
+		} else {
+			console.log('there');
+			document.getElementById('timer').innerHTML = sec;
+		}
+	}
+</script>
+
+</body>
+</html>
